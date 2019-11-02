@@ -14,11 +14,11 @@ logger = logging.getLogger()
 
 
 def connect():
-    return psycopg2.connect(database="postgres", user="saddam", password="root", host="127.0.0.1", port="5432")
+    # return psycopg2.connect(database="postgres", user="saddam", password="root", host="127.0.0.1", port="5432")
 
+    return psycopg2.connect("postgres://gssgzevclkgwcp:420864fc961167f10ebb989b644c811e44631943656b9424675b5a62e9b73d55"
+                            "@ec2-174-129-253-68.compute-1.amazonaws.com:5432/d5cq83vubs3qhb", sslmode='require')
 
-# con = psycopg2.connect("postgres://gssgzevclkgwcp:420864fc961167f10ebb989b644c811e44631943656b9424675b5a62e9b73d55"
-#                        "@ec2-174-129-253-68.compute-1.amazonaws.com:5432/d5cq83vubs3qhb", sslmode='require')
 
 print("Database opened successfully")
 
@@ -26,7 +26,6 @@ updater = Updater(TOKEN)
 PORT = int(os.environ.get('PORT', '8443'))
 
 dispatcher = updater.dispatcher
-
 
 
 def exist(chat_id):
@@ -65,7 +64,6 @@ def start_handler(bot, update):
 
 
 def create_handler(bot, update):
-
     if not exist(update.effective_user['id']):
         update.message.reply_text(
             "Hi! You seem not registered. Follow /start please")
@@ -98,7 +96,7 @@ def create_handler(bot, update):
                 "Hi! Please enter another code. This one exists already. Thank you :)")
             return
         cur.execute("INSERT INTO game (code, name, creator_id) VALUES ('{}', '{}', '{}')".format(code, name,
-                                                                                                      chat_id))
+                                                                                                 chat_id))
         update.message.reply_text(
             "Hi! Your game was created with unique code! Share it so that other can follow!"
             "\nAfter all players followed the game, you can go through /distribution")
@@ -123,7 +121,7 @@ def join_handler(bot, update):
     con = connect()
     cur = con.cursor()
 
-    if len(text.split(' '))==1:
+    if len(text.split(' ')) == 1:
         update.message.reply_text(
             "Please send me in format /join <unique_code>. Thanks!")
         return
@@ -173,15 +171,16 @@ def distribution_handler(bot, update):
         players.append(int(row[0]))
     print(players)
     for i, el in enumerate(players):
-        pair = players[(i + 3)%len(players)]
+        pair = players[(i + 3) % len(players)]
         if len(players) == 3:
-            pair = players[(i + 4)%len(players)]
+            pair = players[(i + 4) % len(players)]
 
         cur.execute("SELECT user_name FROM student WHERE chat_id = '{}'".format(pair))
         username = cur.fetchall()[0][0]
         bot.send_message(chat_id=el, text="You are preparing present for @{}".format(username))
 
     con.close()
+
 
 if MODE == "dev":
     def run(updater):
