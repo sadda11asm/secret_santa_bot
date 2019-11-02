@@ -204,6 +204,11 @@ if __name__ == '__main__':
     updater.dispatcher.add_handler(CommandHandler("join", join_handler))
     updater.dispatcher.add_handler(CommandHandler("distribution", distribution_handler))
     run(updater)
+    con = connect()
+    con.execute("CREATE TABLE student(name varchar(32),chat_id numeric PRIMARY KEY, user_name varchar(32));")
+    con.execute("CREATE TABLE game(code varchar(32) PRIMARY KEY, name varchar(32),creator_id numeric REFERENCES student (chat_id));")
+    con.execute("CREATE TABLE game_student(game_code varchar(32) references game(code), student_id numeric references student(chat_id),PRIMARY KEY (game_code, student_id));")
+    con.close()
 
 # update.effective_user{'id': 247532533, 'first_name': 'Saddam', 'is_bot': False, 'last_name': 'Asmatullayev', 'username': 'sadda11_asm', 'language_code': 'ru'}
 # update.message {'message_id': 26, 'date': 1572700228, 'chat': {'id': 247532533, 'type': 'private', 'username': 'sadda11_asm', 'first_name': 'Saddam', 'last_name': 'Asmatullayev'}, 'text': '/start', 'entities': [{'type': 'bot_command', 'offset': 0, 'length': 6}], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 247532533, 'first_name': 'Saddam', 'is_bot': False, 'last_name': 'Asmatullayev', 'username': 'sadda11_asm', 'language_code': 'ru'}}

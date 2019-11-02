@@ -2,18 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39751eeb-0ebd-4efa-8115-9ef86a61f6e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/.dylibs/libcrypto.1.1.dylib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/.dylibs/libpq.5.11.dylib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/.dylibs/libssl.1.1.dylib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2_binary-2.8.4.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2_binary-2.8.4.dist-info/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2_binary-2.8.4.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2_binary-2.8.4.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2_binary-2.8.4.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2_binary-2.8.4.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2-2.7.1-py3.7.egg-info/PKG-INFO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2-2.7.1-py3.7.egg-info/SOURCES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2-2.7.1-py3.7.egg-info/dependency_links.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2-2.7.1-py3.7.egg-info/installed-files.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2-2.7.1-py3.7.egg-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/psycopg1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/dbapi20.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/dbapi20_tpc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_async.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_async_keyword.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_bugX000.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_bug_gc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_cancel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_connection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_copy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_cursor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_dates.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_errcodes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_extras_dictcursor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_fast_executemany.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_green.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_ipaddress.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_lobject.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_module.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_notify.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_psycopg2_dbapi20.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_quote.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_replication.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_sql.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_transaction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_types_basic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_types_extras.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/test_with.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/testconfig.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tests/testutils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2-2.8.4-py3.7.egg-info/PKG-INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2-2.8.4-py3.7.egg-info/SOURCES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2-2.8.4-py3.7.egg-info/dependency_links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2-2.8.4-py3.7.egg-info/installed-files.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2-2.8.4-py3.7.egg-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/_ipaddress.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/_ipaddress.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/_json.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/_lru_cache.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/_psycopg.cpython-37m-darwin.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/_psycopg.cpython-37m-darwin.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/_range.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/_range.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/compat.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/errorcodes.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/errorcodes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/errors.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/extensions.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/extensions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/extras.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/extras.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/pool.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/pool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/sql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tz.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/psycopg2/tz.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +212,7 @@
       <option name="presentableId" value="Default" />
       <updated>1572712660213</updated>
       <workItem from="1572712667041" duration="2858000" />
-      <workItem from="1572717236539" duration="15999000" />
+      <workItem from="1572717236539" duration="16961000" />
     </task>
     <servers />
   </component>
