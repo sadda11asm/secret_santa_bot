@@ -14,7 +14,7 @@ logger = logging.getLogger()
 
 
 def connect():
-    return psycopg2.connect(database="postgres", user="saddam", password="root", host="127.0.0.1", port="5432")
+    # return psycopg2.connect(database="postgres", user="saddam", password="root", host="127.0.0.1", port="5432")
 
     return psycopg2.connect("postgres://gssgzevclkgwcp:420864fc961167f10ebb989b644c811e44631943656b9424675b5a62e9b73d55"
                             "@ec2-174-129-253-68.compute-1.amazonaws.com:5432/d5cq83vubs3qhb", sslmode='require')
