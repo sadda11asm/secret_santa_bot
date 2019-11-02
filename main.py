@@ -25,5 +25,5 @@ updater.start_webhook(listen='0.0.0.0',
                       port=PORT,
                       url_path=TOKEN)
 
-updater.bot.set_webhook("https://nusantabot.herokuapp.com/" + TOKEN)
+updater.bot.set_webhook("https://lit-hamlet-25776.herokuapp.com/" + TOKEN)
 updater.idle()
