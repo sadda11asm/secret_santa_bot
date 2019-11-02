@@ -1,3 +1,2 @@
 telegram
-psycopg2.binary
-psycopg2==2.7.1
+psycopg2

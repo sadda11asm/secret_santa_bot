@@ -14,7 +14,7 @@ logger = logging.getLogger()
 
 
 def connect():
-    # return psycopg2.connect(database="postgres", user="saddam", password="root", host="127.0.0.1", port="5432")
+    return psycopg2.connect(database="postgres", user="saddam", password="root", host="127.0.0.1", port="5432")
 
     return psycopg2.connect("postgres://gssgzevclkgwcp:420864fc961167f10ebb989b644c811e44631943656b9424675b5a62e9b73d55"
                             "@ec2-174-129-253-68.compute-1.amazonaws.com:5432/d5cq83vubs3qhb", sslmode='require')
@@ -97,6 +97,7 @@ def create_handler(bot, update):
             return
         cur.execute("INSERT INTO game (code, name, creator_id) VALUES ('{}', '{}', '{}')".format(code, name,
                                                                                                  chat_id))
+        cur.execute("INSERT INTO game_student (game_code, student_id) VALUES ('{}', '{}')".format(code, chat_id))
         update.message.reply_text(
             "Hi! Your game was created with unique code! Share it so that other can follow!"
             "\nAfter all players followed the game, you can go through /distribution")
@@ -163,8 +164,6 @@ def distribution_handler(bot, update):
     code = rows[0][0]
 
     players = list()
-    players.append(chat_id)
-
     cur.execute("SELECT student_id FROM game_student WHERE game_code = '{}'".format(code))
     rows = cur.fetchall()
     for row in rows:
@@ -205,9 +204,11 @@ if __name__ == '__main__':
     updater.dispatcher.add_handler(CommandHandler("distribution", distribution_handler))
     run(updater)
     con = connect()
-    con.execute("CREATE TABLE student(name varchar(32),chat_id numeric PRIMARY KEY, user_name varchar(32));")
-    con.execute("CREATE TABLE game(code varchar(32) PRIMARY KEY, name varchar(32),creator_id numeric REFERENCES student (chat_id));")
-    con.execute("CREATE TABLE game_student(game_code varchar(32) references game(code), student_id numeric references student(chat_id),PRIMARY KEY (game_code, student_id));")
+    cur = con.cursor()
+    cur.execute("CREATE TABLE student(name varchar(32),chat_id numeric PRIMARY KEY, user_name varchar(32));")
+    cur.execute("CREATE TABLE game(code varchar(32) PRIMARY KEY, name varchar(32),creator_id numeric REFERENCES student (chat_id));")
+    cur.execute("CREATE TABLE game_student(game_code varchar(32) references game(code), student_id numeric references student(chat_id),PRIMARY KEY (game_code, student_id));")
+    con.commit()
     con.close()
 
 # update.effective_user{'id': 247532533, 'first_name': 'Saddam', 'is_bot': False, 'last_name': 'Asmatullayev', 'username': 'sadda11_asm', 'language_code': 'ru'}
