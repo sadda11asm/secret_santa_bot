@@ -46,13 +46,16 @@ def start_handler(bot, update):
         con = connect()
         cur = con.cursor()
         name = update.effective_user["first_name"]
+        last_name = update.effective_user["last_name"]
         chat_id = update.effective_user["id"]
         user_name = update.effective_user["username"]
-        cur.execute("INSERT INTO STUDENT (name, chat_id, user_name) VALUES ('{}', '{}', '{}')".format(name, chat_id,
-                                                                                                      user_name))
+        cur.execute("INSERT INTO STUDENT (name, chat_id, user_name, last_name) VALUES ('{}', '{}', '{}', '{}')".format(name, chat_id,
+                                                                                                      user_name, last_name))
         update.message.reply_text(
             "Hi! NU Secret Santa welcomes you! \nIf you want to create a game to play a Secret Santa with your friends "
-            "just follow /create ! \n Or go through or /join to follow existing game!")
+            "just follow <b>/create unique_code_of_your_game </b> ! \n Or go through <b>/join "
+            "unique_code_of_your_game</b> to "
+            "join the existing game!", parse_mode='HTML')
         con.commit()
 
         con.close()
@@ -60,7 +63,8 @@ def start_handler(bot, update):
     else:
 
         update.message.reply_text(
-            "Hi! You seem familiar to me! \nJust follow /create to create a game or /join to follow existing game")
+            "Hi! You seem familiar to me! \nJust follow <b>/create unique_code_of_your_game </b> to create a game or <b>/join "
+            "unique_code_of_your_game</b> to join existing game", parse_mode='HTML')
 
 
 def create_handler(bot, update):
@@ -82,7 +86,7 @@ def create_handler(bot, update):
         text = update.message['text']
         if len(text.split(' ')) <= 1:
             update.message.reply_text(
-                "Hi! Please enter your unique game code")
+                "Hi! Please enter your unique game code in format <b>/create unique_code_of_your_game </b> ", parse_mode='HTML')
             return
         elif len(text.split(' ')) > 2:
             update.message.reply_text(
@@ -174,9 +178,12 @@ def distribution_handler(bot, update):
         if len(players) == 3:
             pair = players[(i + 4) % len(players)]
 
-        cur.execute("SELECT user_name FROM student WHERE chat_id = '{}'".format(pair))
-        username = cur.fetchall()[0][0]
-        bot.send_message(chat_id=el, text="You are preparing present for @{}".format(username))
+        cur.execute("SELECT user_name, name, last_name FROM student WHERE chat_id = '{}'".format(pair))
+        data = cur.fetchall()[0]
+        username = data[0]
+        name = data[1]
+        last_name = data[2]
+        bot.send_message(chat_id=el, text="You are preparing present for {} {} with username @{}".format(name, last_name, username))
 
     con.close()
 
@@ -205,7 +212,7 @@ if __name__ == '__main__':
     run(updater)
     con = connect()
     cur = con.cursor()
-    cur.execute("CREATE TABLE student(name varchar(32),chat_id numeric PRIMARY KEY, user_name varchar(32));")
+    cur.execute("CREATE TABLE student(name varchar(32),chat_id numeric PRIMARY KEY, user_name varchar(32), last_name varchar(32));")
     cur.execute("CREATE TABLE game(code varchar(32) PRIMARY KEY, name varchar(32),creator_id numeric REFERENCES student (chat_id));")
     cur.execute("CREATE TABLE game_student(game_code varchar(32) references game(code), student_id numeric references student(chat_id),PRIMARY KEY (game_code, student_id));")
     con.commit()
